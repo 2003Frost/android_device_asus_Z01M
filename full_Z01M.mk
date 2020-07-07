@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-#TODO: ADD THIS FILE
+
 # Inherit from Z01M device
-#$(call inherit-product, device/asus/Z017/device.mk)
+$(call inherit-product, device/asus/Z01M/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Z01M
