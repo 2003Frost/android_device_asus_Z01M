@@ -64,7 +64,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/asus/Z01M
 TARGET_KERNEL_CONFIG := ZD552KL-Phoenix_defconfig
-TARGET_PREBUILT_KERNEL := $(VENDOR_PATH)/kernel
+# This is not needed since the kernel source is available TARGET_PREBUILT_KERNEL := $(VENDOR_PATH)/kernel
 
 # Audio
 # for TFA98XX {
