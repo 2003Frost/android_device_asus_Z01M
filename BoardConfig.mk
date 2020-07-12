@@ -63,7 +63,7 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/asus/Z01M
-TARGET_KERNEL_CONFIG := ze552kl-perf_defconfig
+TARGET_KERNEL_CONFIG := ZD552KL-Phoenix_defconfig
 # This is not needed since the kernel source is available TARGET_PREBUILT_KERNEL := $(VENDOR_PATH)/kernel
 
 # Audio
