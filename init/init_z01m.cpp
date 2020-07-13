@@ -52,8 +52,8 @@ void vendor_load_properties()
     property_set("ro.product.name", "WW_Z01M");
     if (project == "6") {
         property_override("ro.build.product", "Z01M");
-        property_override("ro.build.description", "Z01M-user 7.1.1 NMF26F WW_user_71.50.395.99_20190918 release-keys");
-        property_override("ro.build.fingerprint", "asus/WW_Z01M/ASUS_Z01M_1:7.1.1/NMF26F/WW_71.50.395.99_20190918:user/release-keys");
+        property_override("ro.build.description", "marlin-user 7.1.2 NJH47F 4146041 release-keys");
+        property_override("ro.build.fingerprint", "google/marlin/marlin:7.1.2/NJH47F/4146041:user/release-keys");
         property_override("ro.product.device", "ASUS_Z01M_1");
         property_override("ro.product.model", "ASUS_Z01MD");
         property_set("ro.product.carrier", "US-ASUS_Z01M-WW_Z01M");
