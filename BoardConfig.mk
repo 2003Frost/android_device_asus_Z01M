@@ -55,6 +55,10 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci 
 BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78af000
+# DISABLE SELINUX / THIS IS A BIG SECURITY FLAW AND NEEDS TO BE FIXED
+# there is no way selinux will work with the trees currently used
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#
 BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00008000
