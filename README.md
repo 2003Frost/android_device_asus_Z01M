@@ -1,10 +1,10 @@
 # Device Tree for ASUS Zenfone 4 Selfie Pro (ZD552KL)
 
-Building for MSM8953 Models Only
+Building for MSM8953 Models Only.
 
-WIP. -Frost_2003
+The ZenFone 4 Selfie Pro (codenamed "ZD552KL"/"Z01M"/"Phoenix") is a mid-range smartphone from ASUS. It was released on October 2017.
 
-Basic   | Spec Sheet
+Feature   | Specification
 -------:|:-------------------------
 CPU     | Octa-core 2.0 GHz Cortex-A53
 Chipset | Qualcomm MSM8953 Snapdragon 625
