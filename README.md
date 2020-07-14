@@ -4,12 +4,6 @@ Building for MSM8953 Models Only
 
 WIP. -Frost_2003
 
-Device Tree for ZenFone 4 Selfie Pro (ZD522KL)
-===========================================
-
-The ZenFone 4 Selfie Pro (codenamed _"ZD522KL"_) is a budget, front camera focused smartphone from ASUS.
-It was released on October 2017.
-
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Octa-core 2.0 GHz Cortex-A53
