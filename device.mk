@@ -149,6 +149,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8937_camera.xml:system/etc/camera/msm8937_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8952_camera.xml:system/etc/camera/msm8952_camera.xml \
 #    $(LOCAL_PATH)/configs/camera/msm8953_camera.xml:system/etc/camera/msm8953_camera.xml \
+
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera.xml \
     $(LOCAL_PATH)/configs/camera/csidtg_camera.xml:system/etc/camera/csidtg_camera.xml \
     $(LOCAL_PATH)/configs/camera/Invensense/VStab_352x288_30_1.conf:system/etc/camera/Invensense/VStab_352x288_30_1.conf \
