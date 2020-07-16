@@ -16,4 +16,10 @@
     "revision": "cm-14.1",
     "target_path": "device/qcom/sepolicy"
   {
+  },
+    "remote": "github",
+    "repository": " omnirom/android_hardware_qcom_audio-caf-msm8996",
+    "revision": "android-7.1",
+    "target_path": "hardware/qcom/audio-caf"
+  {
 ]
