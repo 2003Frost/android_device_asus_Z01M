@@ -43,15 +43,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    $(LOCAL_PATH)/configs/permissions/android.hardware.vulkan.level-0.xml:system/etc/permissions/asus.software.zenui.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     $(LOCAL_PATH)/configs/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     $(LOCAL_PATH)/configs/permissions/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     $(LOCAL_PATH)/configs/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.zenui.xml:system/etc/permissions/android.software.webview.xml \
-    $(LOCAL_PATH)/configs/permissions/android.software.webview.xml:system/etc/permissions/asus.software.zenui.xml \
+    $(LOCAL_PATH)/configs/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.alwayson.xml:system/etc/permissions/asus.hardware.alwayson.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.display.pq_chip.xml:system/etc/permissions/asus.hardware.display.pq_chip.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.display.splendid.reading_mode.xml:system/etc/permissions/asus.hardware.display.splendid.reading_mode.xml \
@@ -77,7 +76,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/asus.software.twinapps.xml:system/etc/permissions/asus.software.twinapps.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.vibration.intensity.xml:system/etc/permissions/asus.software.vibration.intensity.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.whole_system_onehand.xml:system/etc/permissions/asus.software.whole_system_onehand.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.zenui.xml:system/etc/permissions/asus.software.zenui.xml \
     $(LOCAL_PATH)/configs/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
     $(LOCAL_PATH)/configs/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
     $(LOCAL_PATH)/configs/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
@@ -99,7 +97,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/embms.xml:system/etc/permissions/embms.xml \
     $(LOCAL_PATH)/configs/permissions/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     $(LOCAL_PATH)/configs/permissions/im-novo.xml:system/etc/permissions/im-novo.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.zenui.xml:system/etc/permissions/imscm.xml \
+    $(LOCAL_PATH)/configs/permissions/imscm.xml:system/etc/permissions/imscm.xml \
     $(LOCAL_PATH)/configs/permissions/izat.xt.srv.xml:system/etc/permissions/izat.xt.srv.xml \
     $(LOCAL_PATH)/configs/permissions/myinksearch-novo.xml:system/etc/permissions/myinksearch-novo.xml \
     $(LOCAL_PATH)/configs/permissions/myscriptengine-novo.xml:system/etc/permissions/myscriptengine-novo.xml \
@@ -112,17 +110,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
     $(LOCAL_PATH)/configs/permissions/qti-vzw-ims-internal.xml:system/etc/permissions/qti-vzw-ims-internal.xml \
     $(LOCAL_PATH)/configs/permissions/rcs_service_aidl.xml:system/etc/permissions/rcs_service_aidl.xml \
-    $(LOCAL_PATH)/configs/permissions/rcs_service_api.xml:system/etc/permissions/rcs_service_api.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.zenui.xml:system/etc/permissions/asus.software.zenui.xml 
+    $(LOCAL_PATH)/configs/permissions/rcs_service_api.xml:system/etc/permissions/rcs_service_api.xml
     
     
     
     
     
 PRODUCT_COPY_FILES += \
- \    $(LOCAL_PATH)/configs/permissions/asus.software.azs.xml:system/etc/permissions/asus.software.azs.xml \
+    $(LOCAL_PATH)/configs/permissions/asus.software.azs.xml:system/etc/permissions/asus.software.azs.xmzwn \
     $(LOCAL_PATH)/configs/permissions/asus.software.zenui.xml:system/etc/permissions/asus.software.zenui.xml
-
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_CONFIG := normal
