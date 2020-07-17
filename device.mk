@@ -235,6 +235,7 @@ PRODUCT_PACKAGES += \
     libgnsspps
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/etc/gps.cfg:system/etc/gps.cfg \
     $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
