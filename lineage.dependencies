@@ -18,7 +18,7 @@
   {
   },
     "remote": "github",
-    "repository": "CyanogenMod/android_hardware_qcom_audio",
+    "repository": "LineageOS/android_hardware_qcom_audio",
     "revision": "cm-14.1,
     "target_path": "hardware/qcom/audio-caf/msm8996"
   {
