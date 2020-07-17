@@ -719,5 +719,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 #Matlog
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/matlog/com.pluscubed.matlog-1.2.3.apk:system/priv-app/MatLog/base.apk \
+PRODUCT_PACKAGES += \
+    Matlog
+
