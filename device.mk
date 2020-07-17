@@ -449,7 +449,14 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine.conf
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8930.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8950.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-zd552kl.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-ze553kl.conf 
 
 # e2fsck
 PRODUCT_PACKAGES += \
