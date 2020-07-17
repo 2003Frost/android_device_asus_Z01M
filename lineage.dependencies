@@ -18,8 +18,8 @@
   {
   },
     "remote": "github",
-    "repository": " omnirom/android_hardware_qcom_audio-caf-msm8996",
-    "revision": "android-7.1",
+    "repository": "LineageOS/android_hardware_qcom_audio-caf",
+    "revision": "stable/cm-11.0,
     "target_path": "hardware/qcom/audio-caf"
   {
 ]
