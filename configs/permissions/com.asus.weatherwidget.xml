@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.asus.weatherwidget"
+            file="/system/framework/com.asus.weatherwidget.jar"/>
+</permissions> 

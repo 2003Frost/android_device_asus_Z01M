@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+    <library name="com.visionobjects.myscript.engine"
+            file="/system/framework/myscriptengine-novo.jar" />
+</permissions>
