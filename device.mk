@@ -231,7 +231,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx258_mono_chromatix.xml:system/etc/camera/imx258_mono_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/imx298_chromatix.xml:system/etc/camera/imx298_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/imx351_chromatix.xml:system/etc/camera/imx351_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/imx351_chromatix_factory.xml:system/etc/camera/imx351_chromatix_factory.xml \
     $(LOCAL_PATH)/configs/camera/imx362_chromatix.xml:system/etc/camera/imx362_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/imx362_chromatix_factory.xml:system/etc/camera/imx362_chromatix_factory.xml \
     $(LOCAL_PATH)/configs/camera/s5k3m2xm_chromatix_bear.xml:system/etc/camera/s5k3m2xm_chromatix_bear.xml \
     $(LOCAL_PATH)/configs/camera/s5k3m2xm_chromatix.xml:system/etc/camera/s5k3m2xm_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/s5k3m2xx_chromatix.xml:system/etc/camera/s5k3m2xx_chromatix.xml \
