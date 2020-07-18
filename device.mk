@@ -47,10 +47,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version-1_0_3.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    $(LOCAL_PATH)/configs/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
     $(LOCAL_PATH)/configs/permissions/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
-    $(LOCAL_PATH)/configs/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    $(LOCAL_PATH)/configs/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.alwayson.xml:system/etc/permissions/asus.hardware.alwayson.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.display.pq_chip.xml:system/etc/permissions/asus.hardware.display.pq_chip.xml \
     $(LOCAL_PATH)/configs/permissions/asus.hardware.display.splendid.reading_mode.xml:system/etc/permissions/asus.hardware.display.splendid.reading_mode.xml \
@@ -77,8 +74,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/asus.software.vibration.intensity.xml:system/etc/permissions/asus.software.vibration.intensity.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.whole_system_onehand.xml:system/etc/permissions/asus.software.whole_system_onehand.xml \
     $(LOCAL_PATH)/configs/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
-    $(LOCAL_PATH)/configs/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-    $(LOCAL_PATH)/configs/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
     $(LOCAL_PATH)/configs/permissions/com.android.mediadrm.signer.xml:system/etc/com.android.mediadrm.signer.xml \
     $(LOCAL_PATH)/configs/permissions/com.asus.fm.xml:system/etc/permissions/com.asus.fm.xml \
     $(LOCAL_PATH)/configs/permissions/com.asus.weatherwidget.xml:system/etc/permissions/com.asus.weatherwidget.xml \
@@ -104,7 +99,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/myscripthwr-novo.xml:system/etc/permissions/myscripthwr-novo.xml \
     $(LOCAL_PATH)/configs/permissions/myshape-novo.xml:system/etc/permissions/myshape-novo.xml \
     $(LOCAL_PATH)/configs/permissions/org.simalliance.openmobileapi.xml:system/etc/permissions/org.simalliance.openmobileapi.xml \
-    $(LOCAL_PATH)/configs/permissions/platform.xml:system/etc/permissions/platform.xml \
     $(LOCAL_PATH)/configs/permissions/qcom_logkit.xml:system/etc/permissions/qcom_logkit.xml \
     $(LOCAL_PATH)/configs/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
     $(LOCAL_PATH)/configs/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
@@ -426,7 +420,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
