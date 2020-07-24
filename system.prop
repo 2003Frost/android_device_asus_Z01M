@@ -36,8 +36,8 @@ ro.board.platform=msm8953
 # ro.build.product is obsolete; use ro.product.device
 ro.build.product=Z01M
 # Do not try to parse description, fingerprint, or thumbprint
-ro.build.description=Z01M-user 7.1.1 NMF26F WW_user_71.50.395.99_20190918 release-keys
-ro.build.fingerprint=asus/WW_Z01M/ASUS_Z01M_1:7.1.1/NMF26F/WW_71.50.395.99_20190918:user/release-keys
+ro.build.description=marlin-user 7.1.2 NJH47F 4146041 release-keys
+ro.build.fingerprint=google/marlin/marlin:7.1.2/NJH47F/4146041:user/release-keys
 ro.bootimage.build.fingerprint=asus/WW_Z01M/ASUS_Z01M_1:7.1.1/NMF26F/WW_71.50.395.99_20190918:user/release-keys
 ro.build.characteristics=default
 ro.build.asus.sku=WW
