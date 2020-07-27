@@ -21,3 +21,13 @@ PRODUCT_BRAND := asus
 PRODUCT_MANUFACTURER := asus
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
+
+PRODUCT_RESTRICT_VENDOR_FILES := false
+
+$(call inherit-product, device/asus/Z01M/device.mk)
+$(call inherit-product-if-exists, vendor/asus/Z01M/Z01M-vendor.mk)
+
+
+PRODUCT_PACKAGES += \
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
+    Launcher3
