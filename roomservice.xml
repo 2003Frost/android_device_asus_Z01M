@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="2003Frost/android_kernel_asus_Z01M" path="kernel/asus/Z01M" remote="github" revision="master" />
+  <project name="2003Frost/proprietary_vendor_asus_Z01M" path="vendor/asus/Z01M" remote="github" revision="android-7.1" />
+  <project name="2003Frost/android_device_asus_Z01M" path="device/asus/Z01M" remote="github" revision="aosp-7.1" />
+  <project name="LineageOS/android_vendor_cm" path="vendor/cm" remote="github" revision="cm-14.1" />
