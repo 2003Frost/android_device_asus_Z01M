@@ -708,7 +708,43 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-#Matlog
+# Matlog
 PRODUCT_PACKAGES += \
     Matlog
 
+# Stuff that can't be in the vendor tree for some reason
+PRODUCT_PACKAGES += \
+    com.quicinc.cne.api@1.0 \
+    com.quicinc.cne.constants@1.0 \
+    com.quicinc.cne.constants@2.0 \
+    com.quicinc.cne.server@1.0 \
+    com.quicinc.cne.server@2.0 \
+    libbtnv \
+    AsusSplendidCommandAgent \
+    AsusSplendid \
+    libgpustats \
+    libsdm-disp-vndapis \
+    libthermalclient \
+    libtime_genoff \
+    libloc_api_v02 \
+    QtiTelephonyService \
+    QtiTetherService \
+    WfdService \
+    datastatusnotification \
+    embms \
+    SmartcardService \
+    ims \
+    imssettings \
+    radioconfig \
+    CNEService \
+    SVIService \
+    CABLService \
+    RIDLClient \
+    colorservice \
+    com.qualcomm.location \
+    dpmserviceapp \
+    qcrilmsgtunnel \
+    PowerOffAlarm \
+    TimeService \
+    com.quicinc.cne.api-V1.0-java \
+    com.quicinc.cne
