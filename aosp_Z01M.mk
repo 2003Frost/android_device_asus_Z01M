@@ -29,5 +29,5 @@ $(call inherit-product-if-exists, vendor/asus/Z01M/Z01M-vendor.mk)
 
 
 PRODUCT_PACKAGES += \
+	Launcher3
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
-    Launcher3
