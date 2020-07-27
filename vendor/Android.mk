@@ -38,7 +38,7 @@ ifeq ($(TARGET_DEVICE),Z01M)
 include $(CLEAR_VARS)
 LOCAL_MODULE := QtiTelephonyService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/Z01M/vendor/app/QtiTelephonyService/QtiTelephonyService.apk
+LOCAL_SRC_FILES := app/QtiTelephonyService/QtiTelephonyService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -49,7 +49,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := embms
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/Z01M/vendor/app/embms/embms.apk
+LOCAL_SRC_FILES := app/embms/embms.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -60,7 +60,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := datastatusnotification
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/Z01M/vendor/app/datastatusnotification/datastatusnotification.apk
+LOCAL_SRC_FILES := app/datastatusnotification/datastatusnotification.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -71,7 +71,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := SVIService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/SVIService/SVIService.apk
+LOCAL_SRC_FILES := vendor/app/SVIService/SVIService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -82,7 +82,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := SmartcardService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/SmartcardService/SmartcardService.apk
+LOCAL_SRC_FILES := vendor/app/SmartcardService/SmartcardService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -93,7 +93,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := RIDLClient
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/RIDLClient/RIDLClient.apk
+LOCAL_SRC_FILES := vendor/app/RIDLClient/RIDLClient.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -104,7 +104,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := CABLService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/CABLService/CABLService.apk
+LOCAL_SRC_FILES := vendor/app/CABLService/CABLService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -115,7 +115,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := AsusSplendidCommandAgent
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/Z01M/vendor/app/AsusSplendidCommandAgent/AsusSplendidCommandAgent.apk
+LOCAL_SRC_FILES := app/AsusSplendidCommandAgent/AsusSplendidCommandAgent.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -126,7 +126,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := AsusSplendid
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/AsusSplendid/AsusSplendid.apk
+LOCAL_SRC_FILES := priv-app/AsusSplendid/AsusSplendid.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -138,7 +138,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := FlipCover3
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/FlipCover3/FlipCover3.apk
+LOCAL_SRC_FILES := priv-app/FlipCover3/FlipCover3.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -152,8 +152,8 @@ ifeq ($(QCPATH),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libsdm-disp-apis
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES_64 := device/asus/vendor/vendor/lib64/libsdm-disp-apis.so
-LOCAL_SRC_FILES_32 := device/asus/vendor/vendor/lib/libsdm-disp-apis.so
+LOCAL_SRC_FILES_64 := vendor/lib64/libsdm-disp-apis.so
+LOCAL_SRC_FILES_32 := vendor/lib/libsdm-disp-apis.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -164,8 +164,8 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libthermalclient
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES_64 := device/asus/vendor/vendor/lib64/libthermalclient.so
-LOCAL_SRC_FILES_32 := device/asus/vendor/vendor/lib/libthermalclient.so
+LOCAL_SRC_FILES_64 := vendor/lib64/libthermalclient.so
+LOCAL_SRC_FILES_32 := vendor/lib/libthermalclient.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -176,8 +176,8 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES_64 := device/asus/vendor/vendor/lib64/libtime_genoff.so
-LOCAL_SRC_FILES_32 := device/asus/vendor/vendor/lib/libtime_genoff.so
+LOCAL_SRC_FILES_64 := vendor/lib64/libtime_genoff.so
+LOCAL_SRC_FILES_32 := vendor/lib/libtime_genoff.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -188,7 +188,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := TimeService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/Z01M/vendor/app/TimeService/TimeService.apk
+LOCAL_SRC_FILES := app/TimeService/TimeService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -199,7 +199,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := CNEService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/CNEService/CNEService.apk
+LOCAL_SRC_FILES := priv-app/CNEService/CNEService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -211,7 +211,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := QtiTetherService
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/QtiTetherService/QtiTetherService.apk
+LOCAL_SRC_FILES := priv-app/QtiTetherService/QtiTetherService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -223,7 +223,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := com.qualcomm.location
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/com.qualcomm.location/com.qualcomm.location.apk
+LOCAL_SRC_FILES := priv-app/com.qualcomm.location/com.qualcomm.location.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -235,7 +235,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := dpmserviceapp
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/dpmserviceapp/dpmserviceapp.apk
+LOCAL_SRC_FILES := priv-app/dpmserviceapp/dpmserviceapp.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -247,7 +247,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := qcrilmsgtunnel
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+LOCAL_SRC_FILES := priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -259,7 +259,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := colorservice
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/colorservice/colorservice.apk
+LOCAL_SRC_FILES := vendor/app/colorservice/colorservice.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -271,7 +271,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := ims
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/ims/ims.apk
+LOCAL_SRC_FILES := vendor/app/ims/ims.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -283,7 +283,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := imssettings
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor/vendor/app/imssettings/imssettings.apk
+LOCAL_SRC_FILES := vendor/app/imssettings/imssettings.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
@@ -295,7 +295,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := qcrilhook
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := device/asus/vendor//framework/qcrilhook.jar
+LOCAL_SRC_FILES := framework/qcrilhook.jar
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
