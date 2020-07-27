@@ -1,4 +1,5 @@
-# Copyright (C) 2016 The CyanogenMod Project
+#
+# Copyright 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,13 +12,27 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
 
-$(call inherit-product, device/asus/Z01M/full_Z01M.mk)
+# Get the long list of APNs
 
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := Z01M
+PRODUCT_COPY_FILES := device/lge/bullhead/apns-full-conf.xml:system/etc/apns-conf.xml
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 PRODUCT_NAME := aosp_Z01M
-PRODUCT_BRAND := asus
+PRODUCT_DEVICE := Z01M
+PRODUCT_BRAND := Android
+PRODUCT_MODEL := AOSP on Z01M
 PRODUCT_MANUFACTURER := asus
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
+$(call inherit-product, device/asus/Z01M/device.mk)
+$(call inherit-product-if-exists, vendor/asus/Z01M/Z01M-vendor.mk)
+
+PRODUCT_PACKAGES += \
+    Launcher3
