@@ -702,10 +702,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     rmnetcli
 
-# Doze
-PRODUCT_PACKAGES += \
-   ZenfoneDoze
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Matlog
