@@ -204,7 +204,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZS550KL.xml:system/etc/camera/msm8953_ZS550KL.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera.xml:system/etc/camera/msm8953_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera_ZD552KL_PHOENIX.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD553KL.xml:system/etc/camera/msm8953_camera_ZD553KL.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZE553KL.xml:system/etc/camera/msm8953_camera_ZE553KL.xml \
     $(LOCAL_PATH)/configs/camera/csidtg_camera.xml:system/etc/camera/csidtg_camera.xml \
     $(LOCAL_PATH)/configs/camera/Invensense/VStab_352x288_30_1.conf:system/etc/camera/Invensense/VStab_352x288_30_1.conf \
     $(LOCAL_PATH)/configs/camera/Invensense/VStab_640x480_30_0.conf:system/etc/camera/Invensense/VStab_640x480_30_0.conf \
