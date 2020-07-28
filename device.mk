@@ -201,8 +201,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8996_camera.xml:system/etc/camera/msm8996_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8937_camera.xml:system/etc/camera/msm8937_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8952_camera.xml:system/etc/camera/msm8952_camera.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD550KL_PHOENIX.xml:system/etc/camera/msm8953_ZD550KL_camera.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZS550KL.xml:system/etc/camera/msm8953_ZS550KL.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera.xml:system/etc/camera/msm8953_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera_ZD552KL_PHOENIX.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD553KL.xml:system/etc/camera/msm8953_camera_ZD553KL.xml \
     $(LOCAL_PATH)/configs/camera/csidtg_camera.xml:system/etc/camera/csidtg_camera.xml \
