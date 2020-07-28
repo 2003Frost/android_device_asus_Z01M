@@ -64,7 +64,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.eartouch.xml:system/etc/permissions/asus.software.sensor_service.eartouch.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.terminal.xml:system/etc/permissions/asus.software.sensor_service.terminal.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.xml:system/etc/permissions/asus.software.sensor_service.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.sku.WW.xml.xml:system/etc/permissions/asus.software.sku.WW.xml \
+    $(LOCAL_PATH)/configs/permissions/asus.software.sku.WW.xml:system/etc/permissions/asus.software.sku.WW.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.smartgallery.xml:system/etc/permissions/asus.software.smartgallery.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.themes_store.xml:system/etc/permissions/asus.software.themes_store.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.twinapps.xml:system/etc/permissions/asus.software.twinapps.xml \
