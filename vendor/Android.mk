@@ -42,6 +42,7 @@ LOCAL_SRC_FILES := app/QtiTelephonyService/QtiTelephonyService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/QtiTelephonyService/QtiTelephonyService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -53,6 +54,7 @@ LOCAL_SRC_FILES := app/embms/embms.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/embms/embms.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -64,6 +66,7 @@ LOCAL_SRC_FILES := app/datastatusnotification/datastatusnotification.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/datastatusnotification/datastatusnotification.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -75,6 +78,7 @@ LOCAL_SRC_FILES := vendor/app/SVIService/SVIService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/SVIService/SVIService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -86,6 +90,7 @@ LOCAL_SRC_FILES := vendor/app/SmartcardService/SmartcardService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/SmartcardService/SmartcardService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -97,6 +102,7 @@ LOCAL_SRC_FILES := vendor/app/RIDLClient/RIDLClient.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/RIDLClient/RIDLClient.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -108,6 +114,7 @@ LOCAL_SRC_FILES := vendor/app/CABLService/CABLService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/CABLService/CABLService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -119,6 +126,7 @@ LOCAL_SRC_FILES := app/AsusSplendidCommandAgent/AsusSplendidCommandAgent.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/AsusSplendidCommandAgent/AsusSplendidCommandAgent.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -131,13 +139,12 @@ LOCAL_SRC_FILES := priv-app/FlipCover3/FlipCover3.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/FlipCover3/FlipCover3.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
-
-ifeq ($(QCPATH),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libsdm-disp-apis
 LOCAL_MODULE_OWNER := asus
@@ -146,6 +153,8 @@ LOCAL_SRC_FILES_32 := vendor/lib/libsdm-disp-apis.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH_64 := system/vendor/lib64/libsdm-disp-apis.so
+LOCAL_MODULE_PATH_32 := system/vendor/lib/libsdm-disp-apis.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -158,6 +167,8 @@ LOCAL_SRC_FILES_32 := vendor/lib/libthermalclient.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH_64 := system/vendor/lib64/libthermalclient.so
+LOCAL_MODULE_PATH_32 := system/vendor/lib/libthermalclient.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -170,6 +181,8 @@ LOCAL_SRC_FILES_32 := vendor/lib/libtime_genoff.so
 LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH_64 := system/vendor/lib64/libtime_genoff.so
+LOCAL_MODULE_PATH_32 := system/vendor/lib/libtime_genoff.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
@@ -181,6 +194,7 @@ LOCAL_SRC_FILES := app/TimeService/TimeService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/TimeService/TimeService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
@@ -192,6 +206,7 @@ LOCAL_SRC_FILES := priv-app/CNEService/CNEService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/CNEService/CNEService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
@@ -204,6 +219,7 @@ LOCAL_SRC_FILES := priv-app/QtiTetherService/QtiTetherService.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/QtiTetherService/QtiTetherService.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
@@ -216,6 +232,7 @@ LOCAL_SRC_FILES := priv-app/com.qualcomm.location/com.qualcomm.location.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/com.qualcomm.location/com.qualcomm.location.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
@@ -228,6 +245,7 @@ LOCAL_SRC_FILES := priv-app/dpmserviceapp/dpmserviceapp.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/dpmserviceapp/dpmserviceapp.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
@@ -240,6 +258,7 @@ LOCAL_SRC_FILES := priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
@@ -252,6 +271,7 @@ LOCAL_SRC_FILES := vendor/app/colorservice/colorservice.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/priv-app/colorservice/colorservice.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PROPRIETARY_MODULE := true
@@ -264,6 +284,7 @@ LOCAL_SRC_FILES := vendor/app/ims/ims.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/ims/ims.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PROPRIETARY_MODULE := true
@@ -276,6 +297,7 @@ LOCAL_SRC_FILES := vendor/app/imssettings/imssettings.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/vendor/app/imssettings/imssettings.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PROPRIETARY_MODULE := true
@@ -288,5 +310,6 @@ LOCAL_SRC_FILES := framework/qcrilhook.jar
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_MODULE_PATH := system/framework/qcrilhook.jar
 LOCAL_MODULE_SUFFIX := .jar
 include $(BUILD_PREBUILT)
