@@ -743,4 +743,5 @@ PRODUCT_PACKAGES += \
     PowerOffAlarm \
     TimeService \
     com.quicinc.cne.api-V1.0-java \
-    com.quicinc.cne
+    com.quicinc.cne \
+    access-qcom-logkit
