@@ -1,3 +1,5 @@
+LOCAL_PATH := $(call my-dir)
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := Matlog
 LOCAL_SRC_FILES := com.pluscubed.matlog-1.2.3.apk

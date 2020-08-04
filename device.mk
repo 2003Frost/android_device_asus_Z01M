@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    $(LOCAL_PATH)/configs/permissions/android.hardware.camera.front.xmlandroid.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.manual_postprocessing.xml:system/etc/permissions/android.hardware.camera.manual_postprocessing.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.manual_sensor.xml:system/etc/permissions/android.hardware.camera.manual_sensor.xml \
     $(LOCAL_PATH)/configs/permissions/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml \
@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.eartouch.xml:system/etc/permissions/asus.software.sensor_service.eartouch.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.terminal.xml:system/etc/permissions/asus.software.sensor_service.terminal.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.sensor_service.xml:system/etc/permissions/asus.software.sensor_service.xml \
-    $(LOCAL_PATH)/configs/permissions/asus.software.sku.WW.xml.xml:system/etc/permissions/asus.software.sku.WW.xml \
+    $(LOCAL_PATH)/configs/permissions/asus.software.sku.WW.xml:system/etc/permissions/asus.software.sku.WW.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.smartgallery.xml:system/etc/permissions/asus.software.smartgallery.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.themes_store.xml:system/etc/permissions/asus.software.themes_store.xml \
     $(LOCAL_PATH)/configs/permissions/asus.software.twinapps.xml:system/etc/permissions/asus.software.twinapps.xml \
@@ -204,10 +204,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8996_camera.xml:system/etc/camera/msm8996_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8937_camera.xml:system/etc/camera/msm8937_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8952_camera.xml:system/etc/camera/msm8952_camera.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD550KL_PHOENIX.xml:system/etc/camera/msm8953_ZD550KL_camera.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZS550KL.xml:system/etc/camera/msm8953_ZS550KL.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera.xml:system/etc/camera/msm8953_camera.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera_ZD552KL_PHOENIX.xml \
-    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD553KL.xml:system/etc/camera/msm8953_camera_ZD553KL.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_camera_ZE553KL.xml:system/etc/camera/msm8953_camera_ZE553KL.xml \
     $(LOCAL_PATH)/configs/camera/csidtg_camera.xml:system/etc/camera/csidtg_camera.xml \
     $(LOCAL_PATH)/configs/camera/Invensense/VStab_352x288_30_1.conf:system/etc/camera/Invensense/VStab_352x288_30_1.conf \
     $(LOCAL_PATH)/configs/camera/Invensense/VStab_640x480_30_0.conf:system/etc/camera/Invensense/VStab_640x480_30_0.conf \
@@ -293,13 +293,13 @@ PRODUCT_PACKAGES += \
     libgnsspps
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/gps.cfg:system/etc/gps.cfg \
-    $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/gps/etc/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
+    $(LOCAL_PATH)/configs/gps/gps.cfg:system/etc/gps.cfg \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps/lowi.conf:system/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/gps/sap.conf:system/etc/sap.conf \
+    $(LOCAL_PATH)/configs/gps/xtwifi.conf:system/etc/xtwifi.conf
 
 # Ebtables
 PRODUCT_PACKAGES += \
