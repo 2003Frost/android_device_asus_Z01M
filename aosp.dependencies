@@ -1,8 +1,12 @@
+# THIS PROBABLY WON'T WORK
+remote  name="github"
+fetch="https://source.codeaurora.org"
+
 [
   {
-    "remote": "github",
-    "repository": "CyanogenMod/android_device_qcom_common",
-    "revision": "cm-14.1",
+    "remote": "codeaurora",
+    "repository": "device/qcom/common",
+    "revision": "LE.UM.1.3.r3.18",
     "target_path": "device/qcom/common"
   },
   {
