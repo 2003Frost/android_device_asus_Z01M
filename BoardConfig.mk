@@ -122,6 +122,8 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
+TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
+
 # CNE and DPM
 BOARD_USES_QCNE := true
 
