@@ -38,7 +38,7 @@ ifeq ($(TARGET_DEVICE),Z01M)
 include $(CLEAR_VARS)
 LOCAL_MODULE := access-qcom-logkit
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := vendor/app/access-qcom-logkit/access-qcom-logkit.apk
+LOCAL_SRC_FILES := app/access-qcom-logkit/access-qcom-logkit.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
