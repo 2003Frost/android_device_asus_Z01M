@@ -42,6 +42,7 @@ LOCAL_SRC_FILES := vendor/app/access-qcom-logkit/access-qcom-logkit.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_PATH := system/app/access-qcom-logkit/access-qcom-logkit.apk
 LOCAL_DEX_PREOPT := false
 LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
