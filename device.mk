@@ -178,15 +178,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
 
-# FM
+# Browser
 PRODUCT_PACKAGES += \
-    FM2 \
-    libfmjni \
-    libqcomfm_jni \
-    libfm-hci \
-    fm_helium \
-    qcom.fmradio \
-    fmhal_service
+    Gello
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -260,13 +254,19 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Display Calibration
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
+
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
-# Display Calibration
+# Ebtables
 PRODUCT_PACKAGES += \
-    libjni_livedisplay
+    ebtables \
+    ethertypes \
+    libebtc
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -275,37 +275,28 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fpservice.sh:system/etc/fpservice.sh
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    libfmjni \
+    libqcomfm_jni \
+    libfm-hci \
+    fm_helium \
+    qcom.fmradio \
+    fmhal_service
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
 
-# Browser
+# IMS
 PRODUCT_PACKAGES += \
-    Gello
+    libshim_ims
 
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8953 \
     libgnsspps
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.cfg:system/etc/gps.cfg \
-    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/configs/gps/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/configs/gps/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/configs/gps/xtwifi.conf:system/etc/xtwifi.conf
-
-# Ebtables
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
-
-# IRQ
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -322,6 +313,7 @@ PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/configs/keylayout/synaptics_dsxv26.kl:system/usr/keylayout/synaptics_dsxv26.kl \
 #    $(LOCAL_PATH)/configs/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
+# IDC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/focal-touchscreen.idc:system/usr/idc/focal-touchscreen.idc
 
@@ -334,6 +326,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.cfg:system/etc/gps.cfg \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps/lowi.conf:system/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/gps/sap.conf:system/etc/sap.conf \
+    $(LOCAL_PATH)/configs/gps/xtwifi.conf:system/etc/xtwifi.conf
+
+# IRQ
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -399,6 +405,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.msm8953
 
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8930.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8950.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-zd552kl.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-ze553kl.conf 
+
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
@@ -434,21 +451,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstman \
     fstman.ini
-
-# IMS
-PRODUCT_PACKAGES += \
-    libshim_ims
-
-# Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8064ab.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8930.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8950.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-zd552kl.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine.conf:system/etc/thermal-engine-8953-ze553kl.conf 
 
 # e2fsck
 PRODUCT_PACKAGES += \
