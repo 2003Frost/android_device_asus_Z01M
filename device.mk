@@ -268,6 +268,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjni_livedisplay
 
+# DRM
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
