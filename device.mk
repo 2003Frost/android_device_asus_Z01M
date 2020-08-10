@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
+    libshim_adsp \
     libvolumelistener \
     tinymix
 
@@ -187,7 +188,7 @@ PRODUCT_PACKAGES += \
     camera.msm8953 \
     bspcapability \
     libbson \
-    libshim_camera
+    libshim_camera \
     SnapdragonCamera
 
 PRODUCT_COPY_FILES += \
@@ -245,13 +246,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bspcapability.xml:system/etc/bspcapability.xml \
 
+# CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8953 \
     copybit.msm8953 \
+    liboverlay \
     hwcomposer.msm8953 \
     memtrack.msm8953 \
-    liboverlay \
     libtinyxml
 
 # Display Calibration
@@ -377,6 +382,11 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
+    init.mmi.boot.sh \
+    init.mmi.laser.sh \
+    init.mmi.rc \
+    init.mmi.usb.rc \
+    init.oem.hw.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
@@ -445,6 +455,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libcurl \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
     tcpdump \
     wcnss_service
 
