@@ -300,7 +300,8 @@ PRODUCT_COPY_FILES += \
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes
+    ethertypes \
+    libebtc
 
 # IRQ
 PRODUCT_COPY_FILES += \
