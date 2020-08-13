@@ -325,3 +325,15 @@ LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_PATH := system/framework/qcrilhook.jar
 LOCAL_MODULE_SUFFIX := .jar
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libqdutils
+LOCAL_MODULE_OWNER := asus
+LOCAL_SRC_FILES := lib/libqdutils.so
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := system/lib/libqdutils.so
+LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_SUFFIX := .so
+include $(BUILD_PREBUILT)

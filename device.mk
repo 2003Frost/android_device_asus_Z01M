@@ -121,8 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
+$(call inherit-product, device/asus/Z01M/frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, device/asus/Z01M/frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 PRODUCT_PACKAGES += libGLES_android
 
