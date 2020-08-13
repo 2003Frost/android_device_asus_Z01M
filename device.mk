@@ -758,4 +758,5 @@ PRODUCT_PACKAGES += \
     TimeService \
     com.quicinc.cne.api-V1.0-java \
     com.quicinc.cne \
-    access-qcom-logkit
+    access-qcom-logkit \
+    libqdutils
