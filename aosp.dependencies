@@ -1,5 +1,5 @@
 # THIS PROBABLY WON'T WORK
-remote  name="github"
+remote name="codeaurora"
 fetch="https://source.codeaurora.org"
 
 [
