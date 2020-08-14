@@ -329,11 +329,27 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libqdutils
 LOCAL_MODULE_OWNER := asus
-LOCAL_SRC_FILES := lib/libqdutils.so
-LOCAL_CERTIFICATE := platform
+LOCAL_SRC_FILES_64 := lib64/libqdutils.so
+LOCAL_SRC_FILES_32 := lib/libqdutils.so
+LOCAL_MULTILIB := both
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := system/lib/libqdutils.so
-LOCAL_DEX_PREOPT := false
+LOCAL_MODULE_PATH_64 := system/lib64/libqdutils.so
+LOCAL_MODULE_PATH_32 := system/lib/libqdutils.so
 LOCAL_MODULE_SUFFIX := .so
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libqdMetaData
+LOCAL_MODULE_OWNER := asus
+LOCAL_SRC_FILES_64 := lib64/libqdMetaData.so
+LOCAL_SRC_FILES_32 := lib/libqdMetaData.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH_64 := system/lib64/libqdMetaData.so
+LOCAL_MODULE_PATH_32 := system/lib/libqdMetaData.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
