@@ -353,3 +353,4 @@ LOCAL_MODULE_PATH_32 := system/lib/libqdMetaData.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_PREBUILT)
+endif
