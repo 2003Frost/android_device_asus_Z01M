@@ -15,6 +15,10 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# Dalvik heap and hwui memory limits
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -120,9 +124,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
-
-$(call inherit-product, device/asus/Z01M/frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, device/asus/Z01M/frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 PRODUCT_PACKAGES += libGLES_android
 
