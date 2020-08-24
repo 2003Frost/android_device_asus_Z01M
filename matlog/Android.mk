@@ -6,5 +6,5 @@ LOCAL_SRC_FILES := com.pluscubed.matlog-1.2.3.apk
 LOCAL_MODULE_SUFFIX := .apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_PATH := system/priv-app/MatLog/base.apk
+LOCAL_MODULE_PATH := (TARGET_OUT)/priv-app/MatLog
 include $(BUILD_PREBUILT)
