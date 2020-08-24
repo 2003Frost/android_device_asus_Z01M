@@ -16,7 +16,7 @@ $(call inherit-product, device/asus/Z01M/full_Z01M.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Z01M
-PRODUCT_NAME := aosp_Z01M
+PRODUCT_NAME := lineage_Z01M
 PRODUCT_BRAND := asus
 PRODUCT_MANUFACTURER := asus
 
@@ -27,7 +27,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 $(call inherit-product, device/asus/Z01M/device.mk)
 $(call inherit-product-if-exists, vendor/asus/Z01M/Z01M-vendor.mk)
 
-
-PRODUCT_PACKAGES += \
-	Launcher3
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
+#
+#PRODUCT_PACKAGES += \
+#	Launcher3
+#PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name

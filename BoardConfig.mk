@@ -125,7 +125,6 @@ BOARD_HARDWARE_CLASS += \
     $(LOCAL_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
 
-#TODO - Do we need this? Does AOSP have disk encryption without this?
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
