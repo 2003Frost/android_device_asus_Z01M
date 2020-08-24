@@ -13,14 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-VENDOR_PATH := device/asus/Z01M
+LOCAL_PATH := device/asus/Z01M
 
 BOARD_VENDOR := asus-qcom
 
-TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-# Asserts
-TARGET_OTA_ASSERT_DEVICE := Z01M,ASUS_Z01M,ASUS_Z01MD,ASUS_Z01MD,ZD552KL
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
@@ -50,6 +48,15 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 TARGET_CPU_CORTEX_A53 := true
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := Z01M,ASUS_Z01M,Z01MD,ASUS_Z01MD,ZD552KL
+
+# Init
+TARGET_IGNORE_RO_BOOT_SERIALNO := true
+TARGET_INIT_VENDOR_LIB := libinit_z01m
+TARGET_RECOVERY_DEVICE_MODULES := libinit_z01m
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+
 # Kernel
 BOARD_KERNEL_CMDLINE += cmd_line='console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000
 # DISABLE SELINUX / THIS IS A BIG SECURITY FLAW AND NEEDS TO BE FIXED
@@ -66,17 +73,19 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/asus/Z01M
 TARGET_KERNEL_CONFIG := ZD552KL-Phoenix_defconfig
-# This is not needed since the kernel source is available TARGET_PREBUILT_KERNEL := $(VENDOR_PATH)/kernel
+#BOARD_KERNEL_IMAGE_NAME := kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 # Audio
 # for TFA98XX {
-BOARD_USES_LEGACY_ALSA_AUDIO := true
+BOARD_USES_LEGACY_ALSA_AUDIO := false
 AUDIO_FEATURE_ENABLED_TFA98XX := true
 TFA98XX_CTL_NAME := "QUIN_MI2S_RX Audio Mixer MultiMedia1"
 TFA98XX_LIB_NAME := "libtfa98xx.so"
 TFA98XX_FUNC_CALIBRATION := "Tfa98xx_calibration"
 TFA98XX_FUNC_SPEAKERON := "Tfa98xx_speakeron"
 TFA98XX_FUNC_SPEAKEROFF := "Tfa98xx_speakeroff"
+
 # for TFA98XX }
 BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 0
@@ -93,15 +102,12 @@ AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
-
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -116,14 +122,13 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
     hardware/cyanogen/cmhw \
-    $(VENDOR_PATH)/cmhw
+    $(LOCAL_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode"
 
+#TODO - Do we need this? Does AOSP have disk encryption without this?
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-
-# CNE and DPM
-BOARD_USES_QCNE := true
+TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
 
 # Display
 USE_OPENGL_RENDERER := true
@@ -132,7 +137,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
-BOARD_EGL_CFG := $(VENDOR_PATH)/configs/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 BOARD_USES_ADRENO := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
@@ -144,22 +149,14 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 # FM
 BOARD_HAVE_QCOM_FM := true
 
-# Init
-TARGET_IGNORE_RO_BOOT_SERIALNO := true
-TARGET_INIT_VENDOR_LIB := libinit_z01m
-TARGET_RECOVERY_DEVICE_MODULES := libinit_z01m
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -171,24 +168,33 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864     #      65536 * 1024 mmcblk0p5
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4831838208     #    4718592 * 1024 mmcblk0p61
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 56614698496  # 55287791,5 * 1024 mmcblk0p62
 
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+TARGET_PROVIDES_POWERHAL := true
+
 # Qualcomm support
 BOARD_USES_QC_TIME_SERVICES := true
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_POWERHAL_VARIANT := qcom
+TARGET_USE_SDCLANG := true
+
+# CAF
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8937
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8937
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8937
 
 # Radio
 TARGET_RIL_VARIANT := caf
 
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 #TARGET_KERNEL_HAVE_EXFAT := true
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true

@@ -14,11 +14,9 @@
 # limitations under the License.
 #
 
-# Inherit from Z01M device
-$(call inherit-product, device/asus/Z01M/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := Z01M
 PRODUCT_NAME := full_Z01M
-
-$(call inherit-product-if-exists, vendor/asus/Z01M/Z01M-vendor.mk)
