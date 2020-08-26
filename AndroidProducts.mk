@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/lineage_Z01M.mk
+	$(LOCAL_DIR)/aosp_Z01M.mk
