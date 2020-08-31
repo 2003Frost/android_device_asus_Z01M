@@ -278,8 +278,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fpservice.sh:system/etc/fpservice.sh
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/rootdir/etc/fpservice.sh:system/etc/fpservice.sh
 
 # FM
 PRODUCT_PACKAGES += \
