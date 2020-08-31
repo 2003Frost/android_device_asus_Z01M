@@ -320,46 +320,46 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := adbd
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/adbd
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/adbd
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := e2image_blocks
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/e2image_blocks
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/e2image_blocks
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := filefrag_blocks
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/filefrag_blocks
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/filefrag_blocks
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := healthd
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/healthd
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/healthd
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := ueventd
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/ueventd
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/ueventd
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := watchdogd
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_SRC_FILES    := bin/watchdogd
-LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/bin
+LOCAL_SRC_FILES    := sbin/watchdogd
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)/sbin
 include $(BUILD_PREBUILT)
