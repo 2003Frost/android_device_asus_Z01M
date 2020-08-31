@@ -380,30 +380,51 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.mmi.boot.sh \
-    init.mmi.laser.sh \
-    init.mmi.rc \
-    init.mmi.usb.rc \
-    init.oem.hw.sh \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.qcom.sensors.sh \
-    init.qcom.sh \
-    init.class_main.sh \
-    ueventd.qcom.rc
-
-PRODUCT_PACKAGES += \
-    init.asus.rc \
-    init.asus.usb.sh \
-    init.asus.usb.rc \
-    init.asus.thermald.rc \
-    init.asus.debugtool.rc \
-    init.target.rc \
     sp
+    bugreports
+    charger
+    d
+    default.prop
+    etc
+    file_contexts.bin
+    fstab.qcom
+    init
+    init.asus.debugtool.rc
+    init.asus.logtool.rc
+    init.asus.rc
+    init.asus-user.rc
+    init.class_main.sh
+    init.environ.rc
+    init.mdm.sh
+    init.qcom.class_core.sh
+    init.qcom.early_boot.sh
+    init.qcom.rc
+    init.qcom.sensors.sh
+    init.qcom.sh
+    init.qcom.syspart_fixup.sh
+    init.qcom.usb.rc
+    init.qcom.usb.sh
+    init.rc
+    init.target.rc
+    init.usb.configfs.rc
+    init.usb.rc
+    init.zygote32.rc
+    init.zygote64_32.rc
+    property_contexts
+    sdcard
+    seapp_contexts
+    service_contexts
+    texfat.ko
+    ueventd.asus.rc
+    ueventd.qcom.rc
+    ueventd.rc
+    vendor
+    adbd
+    e2image_blocks
+    filefrag_blocks
+    healthd
+    ueventd
+    watchdogd
 
 # RIL
 PRODUCT_PACKAGES += \

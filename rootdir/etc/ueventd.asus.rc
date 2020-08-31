@@ -1,0 +1,15 @@
+#This is ueventd.asus.rc.
+#you can add your item  like this:
+#  /dev/ion                  0664   system     system
+#  /dev/rtc0                 0660   system     system
+#  /dev/smd0                 0660   system     system
+#  /dev/smd4                 0660   system     system
+#  /dev/smd_cxm_qmi          0640   radio      radio
+#  /dev/smd5                 0660   system     system
+#  /dev/smd6                 0660   system     system
+
+#DTS_EAGLE START
+/dev/dts_eagle            0660   system     audio
+#DTS_EAGLE END
+
+/dev/block/bootdevice/by-name/bootparam     0660  root   system
