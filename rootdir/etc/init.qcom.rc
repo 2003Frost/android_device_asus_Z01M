@@ -25,18 +25,32 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.usb.rc
+#ASUS_BSP+++ "[USB][NA][Spec] Add ASUS USB support"
+#import init.qcom.usb.rc
+import init.asus.usb.rc
 #import init.msm.usb.configfs.rc
+#ASUS_BSP--- "[USB][NA][Spec] Add ASUS USB support"
 import init.target.rc
-#import init.qcom.factory.rc
-#import init.qcom.test.rc
+#ASUS_BSP +++ ShowCai "[Thermal] Thermal Service"
+import init.asus.thermald.rc
+#ASUS_BSP --- ShowCai "[Thermal] Thermal Service"
+#+++ ASUS_BSP : Add ASUS user/eng rc
 import init.asus.rc
+# --- ASUS_BSP : Add ASUS user/eng rc
+import init.qcom.factory.rc
+import init.qcom.test.rc
 
+#ASUS_BSP Wei +++
+import init.asus.debugtool.rc
+#ASUS_BSP Wei +++
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
 on init
+    # Load persistent dm-verity state
+    #verity_load_state
+    
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
@@ -50,9 +64,14 @@ on init
     write /sys/fs/cgroup/memory/bg/memory.move_charge_at_immigrate 1
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
+    # Adjust parameters for dm-verity device
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    # Update dm-verity state and set partition.*.verified properties
+    #verity_update_state
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    verity_update_state
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -61,6 +80,15 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
+    # ASUS_BSP Show_Cai +++ Check device support poweroff alarm
+    setprop ro.asus.alarmboot_support 0
+    # ASUS_BSP Show_Cai --- Check device support poweroff alarm
+    # set wifi link file.
+    setprop wlan.driver.ath 0
+    setprop wlan.driver.status unloaded
+    setprop wlan.softap.driver.status unloaded
+    setprop persist.debug.wifi_user_list 1
+    setprop wlan.driver.config /system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -89,6 +117,18 @@ on boot
 
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
+
+    #ASUS_BSP +++ ShawnHuang "Proximity/Light sensor"
+    chown system shell /sys/class/sensors/psensor/switch
+    chown system shell /sys/class/sensors/lsensor/switch
+    chown system shell /sys/class/sensors/psensor/inf_cal
+    chown system shell /sys/class/sensors/psensor/hi_cal
+    chown system shell /sys/class/sensors/psensor/low_cal
+    chown system shell /sys/class/sensors/psensor/proxm
+    chown system shell /sys/class/sensors/lsensor/200lux_cal
+    chown system shell /sys/class/sensors/lsensor/1000lux_cal
+    chown system shell /sys/class/sensors/lsensor/adc
+    #ASUS_BSP +++ ShawnHuang "Proximity/Light sensor"
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -150,29 +190,6 @@ on boot
     write /proc/sys/net/core/rmem_max  8388608
     write /proc/sys/net/core/wmem_max  8388608
 
-    #To allow interfaces to get v6 address when tethering is enabled
-    write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
-
-
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
     # the connection they belong to.
@@ -183,7 +200,7 @@ on boot
 
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
-    write /proc/sys/kernel/printk "8 6 1 7"
+    write /proc/sys/kernel/printk "6 6 1 7"
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
@@ -192,11 +209,26 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Allow access to emmc rawdump block partition and dload sysfs node
-    #chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
-    #chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
+    chmod 0660 /dev/block/bootdevice/by-name/rawdump -p /dev/block/
     chown root system /sys/kernel/dload/emmc_dload
     chmod 0660 /sys/kernel/dload/emmc_dload
 
+    # Permissions for Touch Glove Mode
+    chown system system /sys/bus/i2c/devices/i2c-3/3-0038/glove_mode
+    setprop persist.asus.glove 0
+
+    # Permissions for Touch dclick Mode
+    chown system system /sys/bus/i2c/devices/i2c-3/3-0038/dclick_mode
+    setprop persist.asus.dclick 0
+
+    # Permissions for Touch Gesture Mode
+    chown system system /sys/bus/i2c/devices/i2c-3/3-0038/gesture_mode
+    setprop persist.asus.gesture.type 0000000
+
+    # Permissions for Keypad Mode
+    chown system system /sys/bus/i2c/devices/i2c-3/3-0038/keypad_mode
+    
 # msm specific files that need to be created on /data
 on post-fs-data
     #Create directories for Fingerprint
@@ -334,16 +366,12 @@ on post-fs-data
 
     #Create IOP  deamon related dirs
     mkdir /data/misc/iop 0770 root system
-    
+
     # Mark the copy complete flag to not completed
     write /data/misc/radio/copy_complete 0
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
-    # copy prebuilt qcril.db files always
-    copy /system/vendor/qcril.db /data/misc/radio/qcril_prebuilt.db
-    chown radio radio /data/misc/radio/qcril_prebuilt.db
-    chmod 0660 /data/misc/radio/qcril_prebuilt.db
     # File flags for prebuilt ril db file
     write /data/misc/radio/prebuilt_db_support 1
     chown radio radio /data/misc/radio/prebuilt_db_support
@@ -360,6 +388,9 @@ on post-fs-data
     mkdir /data/misc/qti-logkit/socket-public/ 2750 system qcom_diag
     mkdir /data/misc/qti-logkit/logdata/ 2750 system shell
 
+    #WAPI
+	mkdir /data/misc/wapi_certificate 0770 system wifi
+
     #Create SWAP related dirs
     mkdir /data/system/swap 0770 root system
     chmod 2770 /data/system/swap
@@ -367,8 +398,6 @@ on post-fs-data
     # set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
-
-
 
 
 service perfd /system/vendor/bin/perfd
@@ -394,10 +423,12 @@ service ssr_setup /system/bin/ssr_setup
     oneshot
     disabled
 
+#ASUS-BBSP Dynamic config SSR - Support ramdump save into sdcard+
 service ss_ramdump /system/bin/subsystem_ramdump
-    class main
+#Set class as core to avoid be killed when Cryptfs running
+    class core
     user system
-    group system
+    group system sdcard_rw sdcard_r media_rw
     disabled
 
 on property:persist.sys.ssr.enable_debug=*
@@ -420,18 +451,19 @@ on property:persist.sys.ssr.enable_ramdumps=1
     mkdir /data/ramdump 770 system system
     start ss_ramdump
 
+#ASUS-BBSP Dynamic config SSR - Stop ss_ramdump when ramdump disabled+
 on property:persist.sys.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
+    stop ss_ramdump
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
     #Reset read ahead for dm-0 and dm-1 to 512kb
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
+    start modem-check
     #WDSP FW boot sysfs node used by STHAL
     chown media audio /sys/kernel/wdsp0/boot
-    #CPE fw_name used by sound trigger HAL
-    chown media audio /sys/kernel/wcd_cpe0/fw_name
 
 on property:persist.radio.atfwd.start=false
     stop atfwd
@@ -467,12 +499,6 @@ on property:bluetooth.startbtsnoop=true
 
 on property:bluetooth.startbtsnoop=false
     stop btsnoop
-
-on property:bluetooth.startbtlogger=true
-    start bt_logger
-
-on property:bluetooth.startbtlogger=false
-    stop bt_logger
 
 service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
@@ -512,10 +538,10 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
 
-#service rfs_access /system/bin/rfs_access
-#   class core
-#   user root
-#   group system net_raw
+service rfs_access /system/bin/rfs_access
+   class core
+   user root
+   group system net_raw
 
 service tftp_server /system/bin/tftp_server
    class core
@@ -598,13 +624,6 @@ service btsnoop /system/bin/btsnoop
    disabled
    oneshot
 
-service bt_logger /system/bin/bt_logger
-   user bluetooth
-   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
-   class late_start
-   disabled
-   oneshot
-
 service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
     class late_start
     user root
@@ -620,7 +639,7 @@ service bridgemgrd /system/bin/bridgemgrd
 
 service port-bridge /system/bin/port-bridge
     class main
-    user radio
+    user radio system
     group radio system inet
     disabled
     oneshot
@@ -702,7 +721,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 -dd \
+    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
@@ -716,7 +735,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -dd \
+    -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
@@ -932,9 +951,20 @@ service wifi-crda /system/bin/sh /system/etc/init.crda.sh
    disabled
    oneshot
 
+on property:ro.config.versatility=US
+    setprop ro.asus.phone.tty 1
+    setprop ro.asus.phone.hac 1
+
 on property:sys.boot_completed=1
     start qcom-post-boot
     start qti-testscripts
+
+service modem-check /system/bin/modem_country
+    class late_start
+    user bluetooth
+    group net_bt
+    disabled
+    oneshot
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
@@ -948,6 +978,16 @@ service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     oneshot
     disabled
 
+service hostapd_cmd /system/bin/hostapd_cmd
+    class main
+    group system wifi
+    user root
+    oneshot
+    disabled
+
+on property:persist.sys.wifi.hostapd.cmd=*
+    start hostapd_cmd
+
 service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
     class late_start
     group radio wifi inet
@@ -956,6 +996,10 @@ service ds_fmc_appd /system/bin/ds_fmc_appd -p "rmnet0" -D
 
 on property:persist.data.ds_fmc_app.mode=1
     start ds_fmc_appd
+
+#ASUS_BSP++ Write IMEI to device ID
+on property:persist.radio.device.imei=*
+    setprop ro.deviceid ${persist.radio.device.imei}
 
 service ims_regmanager /system/bin/exe-ims-regmanagerprocessnative
     class late_start
@@ -996,11 +1040,12 @@ service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
     disabled
     oneshot
 
-#service usb_uicc_daemon /system/bin/usb_uicc_client
-#    class main
-#    user system
-#    group system log net_raw
-#    oneshot
+service usb_uicc_daemon /system/bin/usb_uicc_client
+    class main
+    user system
+    group system log net_raw
+    disabled
+    oneshot
 
 on property:sys.usb_uicc.enabled=1
     start usb_uicc_enable
@@ -1031,6 +1076,51 @@ service ssr_diag /system/bin/ssr_diag
     group system
     disabled
 
+#ASUS-BBSP Dynamic config SSR+
+# config subsystem restart
+on property:persist.sys.modem.restart=*
+    restart ssr_cfg
+
+service ssr_cfg /system/xbin/ssr_cfg.sh
+#Set class as core to avoid be killed when Cryptfs running
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+
+service ssr_ui /system/xbin/ssr_ui.sh
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:sys.asus.sar.audio=*
+    restart sar_setting
+
+on property:sys.asus.sar.data=*
+    restart sar_setting
+
+on property:sys.asus.sar.lte0=*
+    restart sar_setting
+
+on property:sys.asus.sar.lte1=*
+    restart sar_setting
+
+on property:wlan.softap.driver.status=*
+    restart sar_setting
+
+service sar_setting /system/bin/sar_setting
+#Set class as core to avoid be killed when Cryptfs running
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+
+#ASUS-BBSP Dynamic config SSR-
+
 service hvdcp /system/bin/hvdcp
     class core
     user root
@@ -1057,7 +1147,8 @@ on property:sys.qbcharger.enable=true
 on property:sys.qbcharger.enable=false
     stop qbcharger
 
-service diag_mdlog_start /system/bin/diag_mdlog
+#ASUS-BBSP Modify for saving modem log - Control by Property - Send mask cleanup to modem at exit+
+service diag_mdlog_start /system/bin/diag_mdlog -c
     class late_start
     user shell
     group system qcom_diag sdcard_rw sdcard_r media_rw
@@ -1070,6 +1161,15 @@ service diag_mdlog_stop /system/bin/diag_mdlog -k
     group system qcom_diag sdcard_rw sdcard_r media_rw
     disabled
     oneshot
+
+#ASUS-BBSP Modify for saving modem log - Control by Property+++
+on property:persist.asus.qxdmlog.enable=1
+   #insmod /system/lib/modules/diagchar.ko
+   restart diag_mdlog_start
+       
+on property:persist.asus.qxdmlog.enable=0
+   start diag_mdlog_stop
+#ASUS-BBSP Modify for saving modem log - Control by Property---
 
 service qlogd /system/xbin/qlogd
     socket qlogd stream 0662 system system
@@ -1130,6 +1230,27 @@ service LKCore-rel /system/vendor/bin/LKCore
     user system
     group system log qcom_diag
 
+# Coresight early boot service
+service cs-early-boot /system/bin/sh /persist/coresight/qdss.agent.sh early-boot /system/etc/init.qcom.debug.sh
+    class core
+    user root
+    oneshot
+
+# Coresight post boot servive
+service cs-post-boot /system/bin/sh /persist/coresight/qdss.agent.sh
+    user root
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start cs-post-boot
+
+on property:sys.dbg.coresight.enable=1
+    write /persist/coresight/enable 1
+
+on property:sys.dbg.coresight.enable=0
+    write /persist/coresight/enable 0
+
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
@@ -1141,10 +1262,10 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     group nfc
 
 # Seemp health service
-#service seemp_healthd /system/vendor/bin/seemp_healthd
-#    class late_start
-#    user system
-#    group system
+service seemp_healthd /system/vendor/bin/seemp_healthd
+    class late_start
+    user system
+    group system
 
 on charger
     setprop persist.sys.usb.config charging
@@ -1168,7 +1289,5 @@ service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootde
 on property:ro.logdumpd.enabled=1
     start logdumpd
 
-service time_daemon /system/bin/time_daemon
-class main
-user root
-group root
+on property:vold.decrypt=trigger_restart_min_framework
+    start time_daemon

@@ -219,7 +219,7 @@ case "$target" in
                   ;;
         esac
         ;;
-    "msm8994" | "msm8992" | "msm8998")
+    "msm8994" | "msm8992" | "msmcobalt")
         start_msm_irqbalance
         ;;
     "msm8996")
@@ -292,13 +292,13 @@ case "$target" in
              "293" | "304" )
                   case "$hw_platform" in
                        "Surf")
-                                    setprop qemu.hw.mainkeys 1
+                                    setprop qemu.hw.mainkeys 0
                                     ;;
                        "MTP")
-                                    setprop qemu.hw.mainkeys 1
+                        #            setprop qemu.hw.mainkeys 0
                                     ;;
                        "RCM")
-                                    setprop qemu.hw.mainkeys 1
+                                    setprop qemu.hw.mainkeys 0
                                     ;;
                   esac
                   ;;
@@ -341,7 +341,7 @@ buildvariant=`getprop ro.build.type`
 case "$buildvariant" in
     "userdebug" | "eng")
         #set default loglevel to KERN_INFO
-        echo "8 6 1 7" > /proc/sys/kernel/printk
+        echo "6 6 1 7" > /proc/sys/kernel/printk
         ;;
     *)
         #set default loglevel to KERN_WARNING

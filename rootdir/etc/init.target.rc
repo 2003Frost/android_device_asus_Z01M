@@ -27,7 +27,7 @@
 #
 #
 
-#import init.carrier.rc
+import init.carrier.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -59,11 +59,16 @@ on fs
 
     wait /dev/block/bootdevice/by-name/modem
     mount vfat /dev/block/bootdevice/by-name/modem /firmware ro context=u:object_r:firmware_file:s0,shortname=lower,uid=1000,gid=1000,dmask=226,fmask=333
-    write /sys/kernel/boot_adsp/boot 1
+    #write /sys/kernel/boot_adsp/boot 1
 
-    #remove unused partition
-    #wait /dev/block/bootdevice/by-name/oem
-    #mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
+    wait /dev/block/bootdevice/by-name/oem
+    mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
+
+    # +++ ASUS_BSP : Add for user unlock (asuskey: mmcblk0p29) +++
+    wait /dev/block/mmcblk0p29
+    chown root system /dev/block/mmcblk0p29
+    chmod 660 /dev/block/mmcblk0p29
+    # --- ASUS_BSP : Add for user unlock ---
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -76,8 +81,8 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/hbtp 0750 system system
 
-#ASUS_BSP "add file path for DITNetworkFile"
-mkdir /data/dit_file 0777 camera camera
+#support exFAT format
+    insmod /system/lib/modules/texfat.ko
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -99,6 +104,14 @@ on property:persist.usb.chgdisabled=1
 
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
+
+# ASUS_BSP+++ "add for the softap 2GHz/5GHz band select"
+on property:persist.asus.apBand=0
+    write /sys/module/wcnsscore/parameters/do_softap_band 0
+
+on property:persist.asus.apBand=1
+    write /sys/module/wcnsscore/parameters/do_softap_band 1
+# ASUS_BSP--- "add for the softap 2GHz/5GHz band select"
 
 service qrngd /system/bin/qrngd -f
    class main
@@ -143,6 +156,11 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
+   group root
+
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
    group root
 
 service audiod /system/bin/audiod
@@ -195,7 +213,7 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
 service imscmservice /system/bin/imscmservice
    class main
    user system
-   group radio diag inet log
+   group radio net_raw diag diag log
    disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
@@ -208,35 +226,37 @@ service hbtp /system/vendor/bin/hbtp_daemon
     group system
     disabled
 
-service ppd /system/vendor/bin/mm-pp-dpps
-    class late_start
-    disabled
-    user system
-    socket pps stream 0660 system system
-    group system graphics
+#ASUS BSP Display +++
+#service ppd /system/vendor/bin/mm-pp-dpps
+#    class late_start
+#    disabled
+#    user system
+#    socket pps stream 0660 system system
+#    group system graphics
 
-on property:init.svc.surfaceflinger=stopped
-    stop ppd
+#on property:init.svc.surfaceflinger=stopped
+#    stop ppd
 
-on property:init.svc.surfaceflinger=running
-    start ppd
+#on property:init.svc.surfaceflinger=running
+#    start ppd
 
-on property:init.svc.surfaceflinger=restarting
-    stop ppd
+#on property:init.svc.surfaceflinger=restarting
+#    stop ppd
 
-on property:init.svc.zygote=stopped
-    stop ppd
+#on property:init.svc.zygote=stopped
+#    stop ppd
 
-on property:init.svc.zygote=running
-    start ppd
+#on property:init.svc.zygote=running
+#    start ppd
 
-on property:init.svc.zygote=restarting
-    stop ppd
+#on property:init.svc.zygote=restarting
+#    stop ppd
+#ASUS BSP Display ---
 
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    load_system_props
+    load_all_props
     setprop sys.usb.configfs 0
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
