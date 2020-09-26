@@ -1,0 +1,8 @@
+#This is init.asus.rc for user.
+on fs
+#<ASUS-alexwang20151208>support mount factory+++
+    wait /dev/block/bootdevice/by-name/factory
+    mount ext4 /dev/block/bootdevice/by-name/factory /factory ro context=u:object_r:fac_file:s0
+    chown system system /factory
+    chmod 0775 /factory
+#<ASUS-alexwang20151208>support mount factory---

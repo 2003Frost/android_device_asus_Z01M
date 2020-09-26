@@ -32,6 +32,7 @@
 baseband=`getprop ro.baseband`
 sgltecsfb=`getprop persist.radio.sglte_csfb`
 datamode=`getprop persist.data.mode`
+sim_id=$(cat /factory/PhoneInfodisk/sim_id)
 
 case "$baseband" in
     "apq")
@@ -58,6 +59,12 @@ case "$baseband" in
         "dsda2")
           setprop persist.radio.multisim.config dsda
     esac
+
+    if [ "$sim_id" = "S1" ]; then
+	    setprop persist.radio.multisim.config ""
+	else
+	    setprop persist.radio.multisim.config dsds
+    fi
 
     multisim=`getprop persist.radio.multisim.config`
 
