@@ -203,23 +203,23 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx362_chromatix.xml:system/etc/camera/imx362_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/imx362_chromatix_factory.xml:system/etc/camera/imx362_chromatix_factory.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_camera_ZD552KL_PHOENIX.xml:system/etc/camera/msm8953_camera_ZD552KL_PHOENIX.xml \
-    $(LOCAL_PATH)/configs/camera/VStab_1280x720_30_0.conf:system/etc/camera/VStab_1280x720_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_1280x720_30_1.conf:system/etc/camera/VStab_1280x720_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_1280x720_30_2.conf:system/etc/camera/VStab_1280x720_30_2.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_176x144_30_0.conf:system/etc/camera/VStab_176x144_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_176x144_30_1.conf:system/etc/camera/VStab_176x144_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_1920x1080_30_0.conf:system/etc/camera/VStab_1920x1080_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_1920x1080_30_1.conf:system/etc/camera/VStab_1920x1080_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_1920x1080_30_2.conf:system/etc/camera/VStab_1920x1080_30_2.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_320x240_30_0.conf:system/etc/camera/VStab_320x240_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_320x240_30_1.conf:system/etc/camera/VStab_320x240_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_352x288_30_0.conf:system/etc/camera/VStab_352x288_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_352x288_30_1.conf:system/etc/camera/VStab_352x288_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_640x480_30_0.conf:system/etc/camera/VStab_640x480_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_640x480_30_1.conf:system/etc/camera/VStab_640x480_30_1.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_640x480_30_2.conf:system/etc/camera/VStab_640x480_30_2.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_720x480_30_0.conf:system/etc/camera/VStab_720x480_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_720x480_30_1.conf:system/etc/camera/VStab_720x480_30_1.conf
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1280x720_30_0.conf:system/etc/camera/VStab_1280x720_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1280x720_30_1.conf:system/etc/camera/VStab_1280x720_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1280x720_30_2.conf:system/etc/camera/VStab_1280x720_30_2.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_176x144_30_0.conf:system/etc/camera/VStab_176x144_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_176x144_30_1.conf:system/etc/camera/VStab_176x144_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1920x1080_30_0.conf:system/etc/camera/VStab_1920x1080_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1920x1080_30_1.conf:system/etc/camera/VStab_1920x1080_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_1920x1080_30_2.conf:system/etc/camera/VStab_1920x1080_30_2.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_320x240_30_0.conf:system/etc/camera/VStab_320x240_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_320x240_30_1.conf:system/etc/camera/VStab_320x240_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_352x288_30_0.conf:system/etc/camera/VStab_352x288_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_352x288_30_1.conf:system/etc/camera/VStab_352x288_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_640x480_30_0.conf:system/etc/camera/VStab_640x480_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_640x480_30_1.conf:system/etc/camera/VStab_640x480_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_640x480_30_2.conf:system/etc/camera/VStab_640x480_30_2.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_720x480_30_0.conf:system/etc/camera/VStab_720x480_30_0.conf \
+    $(LOCAL_PATH)/configs/camera/Invensense/VStab_720x480_30_1.conf:system/etc/camera/VStab_720x480_30_1.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bspcapability.xml:system/etc/bspcapability.xml
