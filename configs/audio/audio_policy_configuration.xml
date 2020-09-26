@@ -65,7 +65,7 @@
                 </mixPort>
                 <mixPort name="deep_buffer" role="source"
                         flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="raw" role="source"
@@ -301,7 +301,7 @@
 
     <!-- Volume section -->
 
-    <xi:include href="audio_policy_volumes.xml"/>
+    <xi:include href="audio_policy_volumes_Z01M.xml"/>
     <xi:include href="default_volume_tables.xml"/>
 
     <!-- End of Volume section -->
