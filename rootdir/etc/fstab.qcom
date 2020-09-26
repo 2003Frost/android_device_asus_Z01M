@@ -24,4 +24,4 @@
 /devices/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*       /storage/usbotg    vfat    nosuid,nodev         wait,voldmanaged=usbotg:auto
 
 # zram
-/dev/block/zram0                             none            swap    defaults                                                   zramsize=161061273
+/dev/block/zram0                             none            swap    defaults                                                   zramsize=161061273,notrim
