@@ -190,7 +190,7 @@ PRODUCT_PACKAGES += \
     bspcapability \
     libbson \
     libshim_camera \
-    SnapdragonCamera
+    Snap
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8996_camera.xml:system/etc/camera/msm8996_camera.xml \
