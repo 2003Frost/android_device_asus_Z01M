@@ -67,4 +67,7 @@
 /system/bin/ssn                         u:object_r:asus_ssn_exec:s0
 
 # asusfw
-/dev/block/bootdevice/by-name/asusfw   u:object_r:asusfw_block_device:s0
+/dev/block/bootdevice/by-name/asusfw    u:object_r:asusfw_block_device:s0
+
+# zram
+/dev/block/zram0                        u:object_r:swap_block_device:s0
