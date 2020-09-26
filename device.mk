@@ -220,10 +220,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/VStab_640x480_30_1.conf:system/etc/camera/VStab_640x480_30_1.conf \
     $(LOCAL_PATH)/configs/camera/VStab_640x480_30_2.conf:system/etc/camera/VStab_640x480_30_2.conf \
     $(LOCAL_PATH)/configs/camera/VStab_720x480_30_0.conf:system/etc/camera/VStab_720x480_30_0.conf \
-    $(LOCAL_PATH)/configs/camera/VStab_720x480_30_1.conf:system/etc/camera/VStab_720x480_30_1.conf \
+    $(LOCAL_PATH)/configs/camera/VStab_720x480_30_1.conf:system/etc/camera/VStab_720x480_30_1.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/bspcapability.xml:system/etc/bspcapability.xml \
+    $(LOCAL_PATH)/configs/bspcapability.xml:system/etc/bspcapability.xml
 
 # CMActions
 PRODUCT_PACKAGES += \
@@ -255,9 +255,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/rootdir/etc/fpservice.sh:system/etc/fpservice.sh
 
 # FM
 PRODUCT_PACKAGES += \
